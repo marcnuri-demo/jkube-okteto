@@ -14,7 +14,8 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <properties>
-    <java.version>17</java.version>
+    <java.version>11</java.version>
+    <jkube.generator.name>registry.cloud.okteto.net/manusa/jkube-okteto-demo</jkube.generator.name>
   </properties>
 
   <dependencies>
@@ -34,6 +35,19 @@
         <groupId>org.eclipse.jkube</groupId>
         <artifactId>kubernetes-maven-plugin</artifactId>
         <version>1.5.1</version>
+        <configuration>
+          <resources>
+            <annotations>
+              <service>
+                <property>
+                  <name>dev.okteto.com/auto-ingress</name>
+                  <value>true</value>
+                </property>
+              </service>
+            </annotations>
+            <imagePullPolicy>Always</imagePullPolicy>
+          </resources>
+        </configuration>
       </plugin>
     </plugins>
   </build>
