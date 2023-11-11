@@ -34,7 +34,7 @@
       <plugin>
         <groupId>org.eclipse.jkube</groupId>
         <artifactId>kubernetes-maven-plugin</artifactId>
-        <version>1.6.0</version>
+        <version>1.15.0</version>
         <configuration>
           <resources>
             <annotations>
